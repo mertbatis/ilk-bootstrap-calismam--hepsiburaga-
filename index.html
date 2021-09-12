@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en"  style="background-color:white; ">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/jquery-3.4.1.min.js"> </script>
+    <title>HepsiBurağa</title>
+    <style type="">
+
+a{
+
+color: black;
+
+}
+
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: lightgray;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+      li{
+
+
+text-decoration: none;
+list-style: none;
+margin-top: 2px;
+font-size: 12px;
+float: left;
+
+  }
+   
+ul#menuu li ul
+{
+  display: none;
+  float: left;
+}
+
+
+ul#menuu li:hover ul
+{
+  float: left;
+  display: block;
+}
+
+
+
+    </style>
+
+   <link rel="icon" href="hepsi.ico" type="image/x-icon" />
+</head>
+
+<body  style="margin: auto; background-color:#e5e5e5;">
+
+
+	  <nav id="darc" class="navbar navbar-expand-lg navbar-light d-none d-xl-block " style="background-color:white; margin: auto; ">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav"  style="margin: auto; ">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" style=" margin: auto; color: black; text-decoration: none; font-size: 12px;" title="Siparişlerim fırsatları">Siparişlerim </a></li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Günün fırsatları </a></li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Yurt Dışı Satış">Yurt Dışı Satış </a></li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Bugün Teslimat">Bugün Teslimat </a></li>
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Kampanyalar">Kampanyalar</a></li>
+                              <li class="nav-item active">
+                                  <a id="grsk" class="nav-link" href="#" style="padding-right: 25px; color: red; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Girişimci Kadınlar </a></li>
+                                  <li class="nav-item active">
+                                      <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Yardım">Yardım</a></li>
+                                      <li class="nav-item active">
+                                          <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Bize Sorun">Bize Sorun</a></li>
+
+
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+  <nav id="dard" class="navbar navbar-expand-lg navbar-light d-none d-xl-block " style="background-color:white; height: 70px">
+        
+      
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav "  style="margin: auto;">
+            <li class="nav-item active " style="    ; padding-right: 100px " >
+              <a href="index.html" style=" z-index:9122" >
+                      <img src="hepsi.png"   class="img-fluid d-none d-xl-block" alt="Responsive image"  height="40px" width="190px"></a>
+                        </li>
+              <li class="nav-item active ">
+                  
+
+            <input type="text" id="loginput" style="height:48px; width: 582px ;  border-radius: 4px; border: 2px solid gray"  placeholder="Ürün, kategori veya marka ara"  > 
+
+                             </li>
+                  <li class="nav-item active">
+                      <button id="loginbtn" class="btn btn-secondary "   style=" height: 48px;  margin-right: 50px " type="button">ARA</button>
+
+                    </li>
+                      <li class="nav-item active" style="padding-right: 20px">
+                        
+
+
+<div class="form-group" style="">
+                  <div class="d-flex">
+                        <div class="dropdown" style="z-index:9122" >
+                          <button id="giris"  style=" height: 55px; border: 1px solid black ;" type="button" class="btn btn-light dropdown-toggle  d-none d-xl-block" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                           <img src="adam.jpg" style=" " height="20px" width="19px" alt=""> Giriş Yap
+                           <h style="font-size: 11px">veya üye ol</h>
+                          </button>   
+                          <div style="z-index:9122"  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="login.html">Giriş Yap</a>
+                            <a class="dropdown-item" href="#">Üye ol</a>
+                            <hr>
+                            <a class="dropdown-item" href="#">Siparişlerim</a>
+                            <a class="dropdown-item" href="#">Hesabım</a>
+                            <a class="dropdown-item" href="#">Favori Listem</a>
+                            <hr>
+                            <a class="dropdown-item" href="#">Hediye Çeklerim</a>
+                            <hr>
+                            <a class="dropdown-item" href="#">Mesajlarım</a>
+                         </div>
+                        </div>
+                    </div>  </div> </li>
+
+                          <li class="nav-item active">
+                             
+  <a href="sepetim.html">  <button id="ooo" style=" height: 55px" class="btn btn-secondary  d-none d-xl-block" > <img src="sepet.jpg" height="20px" width="" alt="">  Sepetim
+   <li style="position:relative; font-size:11px; float:right; display: none;  width: auto;"class="ürünsayi" value="" type="" name="">Sepetinize <div id="yeter" ></div> Adet ürün eklenmiştir </li> </button></a>
+  </li>  <li><label style="" class="switch">
+  <input id="darkmode" value="2" type="checkbox">
+  <span class="slider"></span>
+
+</label> <p><b id="dfont">Dark Mode</b></p> </li>  
+
+
+          </ul>
+
+        </div>
+
+      </nav>
+      
+
+
+
+
+         </div>
+          </div>
+           </div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-truncate" style="background-color:#ff6000; ">
+      
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul  id="güm" class="navbar-nav" style="margin: auto;">
+                 
+                  
+                  <div class="d-flex">
+                      <div class="dropdown">
+                        <button id="frop"  style="z-index:9122;border:none;   font-size: 14px; color: white ;" type="button" class="btn dropdown-toggle " id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                       Elektronik
+                        </button> 
+                        <div id="yav"  style="z-index:9122;border: none;  margin-top: -2px; background-color:white; display: none;  " class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+
+
+
+                              <div  class="btn-group dropright">
+                                <li>
+                                  <button id="gluk" type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Bilgisayar/Tablet
+                                  </button>
+                                  </li>
+                                  <div id="vav"  class="dropdown-menu" style="z-index:9122;margin-top: -8px; margin-left:-3px;  border:none; ">
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Dizüstü Bilgisayar 
+                                          <p style="color:black; font-size: 13px;">Notebook falan</p></a> 
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Tablet 
+                                          <p style="color:black; font-size: 13px;">güzel</p>  </a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Falan</a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Filan</a>
+                                  </div>
+                                </div>
+                                
+<br>
+                                <div  class="btn-group dropright">
+                                  <button id="gluk" type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    YAZICILAR/PROJEKSİYON
+                                  </button>
+                                  <div id="hav" class="dropdown-menu" style="margin-top: -8px; margin-left:-3px;  border:none; ">
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Dizüstü Bilgisayar 
+                                          <p style="color:black; font-size: 13px;">Notebook falan</p></a> 
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Tablet 
+                                          <p style="color:black; font-size: 13px;">güzel</p>  </a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Falan</a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Filan</a>
+                                  </div>
+                                </div>
+                  
+
+
+
+
+
+                          <hr>
+                          <a class="dropdown-item" href="#">Siparişlerim</a>
+                          <a  class="dropdown-item" href="#">Hesabım</a>
+                          <a class="dropdown-item" href="#">Favori Listem</a>
+                          <hr>
+                          <a class="dropdown-item" href="#">Hediye Çeklerim</a>
+                          <hr>
+                          <a class="dropdown-item" href="#">Mesajlarım</a>
+                        </div>
+                      </div>
+                      </div>
+
+
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">HEPSİMODA <span class="sr-only">(current)</span></a>
+                </li>
+              
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" style="margin-left: 25px; font-size: 12px; "><span >EV, YAŞAM, KIRTASİYE, OFİS</span>,<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">OTO,BAHÇE <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">ANNE BEBEK <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">SPOR OUTDOOR <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item active">
+                        <ul></ul>
+                          <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">KOZMETİK <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">SÜPERMARKET <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">KİTAP, MÜZİK <span class="sr-only">(current)</span></a>
+                            </li>
+              </ul>
+            </div>
+          </nav>
+  </div>
+<div class="container">
+<div class="row">
+
+<a href="#"> <img src="üst.png" class="img-fluid" alt="Responsive image"></a>
+
+
+</div>
+</div>
+
+<div class="container">
+
+<br>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" style="margin: auto;">
+
+  <div class="carousel-item active">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-light " style="background-color:white; margin: auto; ">
+        
+    
+            <ul class="navbar-nav"  style=" margin:auto;">
+             <li class="nav-item active">
+                <a class="nav-link" href="urun.html" style="padding-right: 25px; color: black; list-style: none; text-decoration: none; font-size: 12px;" title="Dell Alienwar Oyuncu Mouse"> 
+                <div id="tablo">
+                <img src="urun1.png"  class="d-block w-100" alt="..."> 
+                <div class="text">Dell Alienwar Oyuncu Mouse</div>
+                <div class="text"><b style="font-size: 20px"> 99,99 TL</b></div>
+                </div>
+                </a></li> 
+
+                  <li class="nav-item active">
+                <a class="nav-link" href="#" style="padding-right: 25px; color: black; list-style: none; text-decoration: none; font-size: 12px;" title="Huawei MediaPad T3 16GB"> 
+                <div id="tablo">
+                <img src="urun2.png" class="d-block w-100" alt="..."> 
+                <div class="text">Huawei MediaPad T3 16GB</div>
+                <div class="text"><b style="font-size: 20px"> 599,99 TL</b></div>
+                </div>
+                </a></li> 
+
+
+
+                  <li class="nav-item active">
+                <a class="nav-link" href="#" style="padding-right: 25px; color: black;list-style: none;  text-decoration: none; font-size: 12px;" title="Çocuk Su Tabancası"> 
+                <div id="tablo">
+                <img src="urun3.png" class="d-block w-100 " alt="..."> 
+                <div class="text">Çocuk Su Tabancası</div>
+                <div class="text"><b style="font-size: 20px"> 39,99 TL</b></div>
+                </div>
+                </a></li>
+
+                      <li class="nav-item active">
+                          <a class="nav-link" href="#" style="padding-right: 25px; color: black; list-style-type: none; text-decoration: none; font-size: 12px;" title=" Asus laptop 25214 GB"> 
+
+                     <div id="tablo">
+                     <img src="urun4.png" class="d-block w-100" alt="..."> 
+                     <div class="text"> Asus laptop 25214 GB</div>
+                     <div class="text"><b style="font-size: 20px"> 10.199,00 TL</b></div>
+                    </div>
+                    </a></li>
+                    </ul> 
+                   
+                    </nav>
+                    </div>
+
+
+
+      <div class="carousel-item " style="margin:auto;">
+        <nav   id="navv" class="navbar navbar-expand-lg navbar-light" style="margin: auto; background-color: white;">
+          <ul class="navbar-nav"  style=" margin:auto;">
+             <li class="nav-item active">
+                <a class="nav-link" href="urun.html" style="padding-right: 25px; color: black; list-style: none; text-decoration: none; font-size: 12px;" title="Dell Alienwar Oyuncu Mouse"> 
+                <div id="tablo">
+                <img src="urun1.png"  class="d-block w-100" alt="..."> 
+                <div class="text">Dell Alienwar Oyuncu Mouse</div>
+                <div class="text"><b style="font-size: 20px"> 99,99 TL</b></div>
+                </div>
+                </a></li> 
+
+                  <li class="nav-item active">
+                <a class="nav-link" href="#" style="padding-right: 25px; color: black; list-style: none; text-decoration: none; font-size: 12px;" title="Huawei MediaPad T3 16GB"> 
+                <div id="tablo">
+                <img src="urun2.png" class="d-block w-100" alt="..."> 
+                <div class="text">Huawei MediaPad T3 16GB</div>
+                <div class="text"><b style="font-size: 20px"> 599,99 TL</b></div>
+                </div>
+                </a></li> 
+
+
+
+                  <li class="nav-item active">
+                <a class="nav-link" href="#" style="padding-right: 25px; color: black;list-style: none;  text-decoration: none; font-size: 12px;" title="Çocuk Su Tabancası"> 
+                <div id="tablo">
+                <img src="urun3.png" class="d-block w-100 " alt="..."> 
+                <div class="text">Çocuk Su Tabancası</div>
+                <div class="text"><b style="font-size: 20px"> 39,99 TL</b></div>
+                </div>
+                </a></li>
+
+                      <li class="nav-item active">
+                          <a class="nav-link" href="#" style="padding-right: 25px; color: black; list-style-type: none; text-decoration: none; font-size: 12px;" title=" Asus laptop 25214 GB"> 
+
+                     <div id="tablo">
+                     <img src="urun4.png" class="d-block w-100" alt="..."> 
+                     <div class="text"> Asus laptop 25214 GB</div>
+                     <div class="text"><b style="font-size: 20px"> 10.199,00 TL</b></div>
+                    </div>
+                    </a></li>
+                    </ul> 
+           </div>
+           </nav>
+
+  </div>
+
+
+
+
+
+  <a id="dart" class="carousel-control-prev" href="#carouselExampleControls" role="button" style="  opacity: 5.;   position: absolute; " data-slide="prev">
+    <span class="carousel-control-prev-icon"  style="background-color:gray; "aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a id="darz" class="carousel-control-next" href="#carouselExampleControls" role="button" style=" opacity: 5.; position: absolute;" data-slide="next">
+    <span class="carousel-control-next-icon" style="background-color:gray; " aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+
+<footer id="foot" class="page-footer font-small cyan " style="background-color: white;  margin-top: 6px;">
+  <div class="container">
+ <div class="row">
+ <div class="container" style="height: 120px" >     
+  <ul  style=" position: absolute; float: left;">
+  <li class="nav-item active" style="float: left;">
+  <a class="nav-link" href="#" style=" float: left; margin: auto; color: black; text-decoration: none; font-size: 12px;" title="Siparişlerim fırsatları">Siparişlerim </a></li>
+   <li class="nav-item active" style="float: left;">
+  <li class="nav-item active" style="float: left;font-size: 20px padding-right: 10px;"> |</li>
+  <a class="nav-link" href="#" style=" float: left; color: black; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Günün fırsatları </a></li>
+      <li class="nav-item active "  style="float: left;font-size: 20px padding-right: 25px;"> |</li>
+   <li class="nav-item active" style="float: left;">
+  <a class="nav-link" href="#" style=" float: left; color: black; text-decoration: none; font-size: 12px;" title="Yurt Dışı Satış">Yurt Dışı Satış </a></li>
+   </ul>
+    </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+<script>
+
+
+<!-- <!-- <!-- -->
+<!-- $(function() { -->
+  
+<!-- $("#ileri").mousedown(function(){ -->
+
+  <!-- $("#cop").css("margin-left","+=55px"); -->
+  <!-- $("#cop").css("background-color","red") -->
+<!-- }); -->
+
+<!-- $("#ileri").mouseup(function(){ -->
+
+<!-- $("#cop").css("background-color","pink") -->
+<!-- }); -->
+
+
+
+<!-- $("#geri  ").mousedown(function(){ -->
+
+<!-- $("#cop").css("margin-left","-=55px"); -->
+<!-- $("#cop").css("background-color","green") -->
+
+<!-- }); -->
+<!-- $("#geri").mouseup(function(){ -->
+
+<!-- $("#cop").css("background-color","blue") -->
+<!-- }); -->
+
+
+
+<!-- }); -->
+
+<!-- $(function() { -->
+  
+  <!-- $("#ileri").mousedown(function(){ -->
+  
+    <!-- $("#cop").css("margin-left","+=55px"); -->
+    <!-- $("#cop").css("background-color","red") -->
+  <!-- }); -->
+  
+  <!-- $("#ileri").mouseup(function(){ -->
+  
+  <!-- $("#cop").css("background-color","pink") -->
+  <!-- }); -->
+  
+  
+  
+  <!-- $("#geri").mousedown(function(){ -->
+  
+  <!-- $("#cop").css("margin-left","-=55px"); -->
+  <!-- $("#cop").css("background-color","green") -->
+  
+  <!-- }); -->
+  <!-- $("#geri").mouseup(function(){ -->
+  
+  <!-- $("#cop").css("background-color","blue") -->
+  <!-- }); -->
+  
+  
+  
+  <!-- }); -->
+  
+<!-- $(function() { -->
+  
+  <!-- $("#ileri2").mousedown(function(){ -->
+  
+    <!-- $("#cop2").css("margin-left","+=55px"); -->
+    <!-- $("#cop2").css("background-color","red"); -->
+  <!-- }); -->
+  
+  <!-- $("#ileri2").mouseup(function(){ -->
+  
+  <!-- $("#cop2").css("background-color","pink"); -->
+  <!-- }); -->
+  
+  
+  
+  <!-- $("#geri2").mousedown(function(){ -->
+  
+  <!-- $("#cop2").css("margin-left","-=55px"); -->
+  <!-- $("#cop2").css("background-color","green"); -->
+  
+  <!-- }); -->
+  <!-- $("#geri2").mouseup(function(){ -->
+  
+  <!-- $("#cop2").css("background-color","blue"); -->
+  <!-- }); -->
+  <!-- }); --> -->
+-->
+
+
+// $(function(){
+
+// $("html").mouseover(function(){
+
+// var a=$(".degis");
+
+// a.animate({height:200},1000);
+// a.animate({width:1110},1000);
+// $(".hg").animate({fontSize:100},1000);
+// a.css("background-color","#ff6000");
+// });
+
+// $(".stop").click(function(){
+// $(".degis").finish();
+
+
+// });
+
+
+
+
+
+// });
+
+
+// darkmod baslangıc
+$(function(){
+var value = Number($("#darkmode").val());
+$("#darkmode").click(function(){
+
+if (value ==2){
+$("#foot").css("background-color","gray").css("transition-duration","2s");
+$("body").css("background-color","black").css("transition-duration","2s");
+$("#dart").css("background-color","black").css("transition-duration","2s");
+$("#darz").css("background-color","black").css("transition-duration","2s");
+$("#dard").css("background-color","black").css("transition-duration","2s");
+$("#darc").css("background-color","black").css("transition-duration","2s");
+$("a").css("color","white").css("transition-duration","2s");
+$("html").css("background-color","black").css("transition-duration","2s");
+$("#nav").css("background-color","black").css("transition-duration","2s");
+$("#navv").css("background-color","black").css("transition-duration","2s");
+$("#dfont").css("color","white").css("transition-duration","2s");
+$("a.dropdown-item ").css("color","black");
+$("#grsk ").css("color","red");
+value =-1;
+}
+else {
+value =2;
+  $("#foot").css("background-color","white");
+$("body").css("background-color","#e5e5e5");
+$("#dart").css("background-color","white");
+$("#darz").css("background-color","white");
+$("#dard").css("background-color","white");
+$("#darc").css("background-color","white");
+$("a").css("color","black");
+$("html").css("background-color","white");
+$("#nav").css("background-color","white");
+$("#navv").css("background-color","white");
+$("#dfont").css("color","black");
+$("ul#güm a").css("color","white");
+$("#darke a").css("color","black");
+$("a.dropdown-item ").css("color","black");
+
+$("#grsk ").css("color","red");
+}
+
+
+
+});
+
+});
+// darkmod bitiş
+
+
+$(function(){
+
+
+
+$("#loginput ,#loginbtn").mouseenter(function(){
+$("#loginput").css("border","2px solid #ff6000");
+$("#loginbtn").css("background-color","#ff6000");
+});
+
+
+$("#loginput,#loginbtn").mouseleave(function(){
+$("#loginput").css("border","2px solid gray");
+$("#loginbtn").css("background-color","gray");
+});
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>  

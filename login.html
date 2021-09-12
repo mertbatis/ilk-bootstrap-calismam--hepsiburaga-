@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="js/jquery-3.4.1.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+   <link rel="icon" href="hepsi.ico" type="image/x-icon" />
+</head>
+<style >
+	  li{
+
+
+text-decoration: none;
+list-style: none;
+margin-top: 2px;
+font-size: 12px;
+
+
+  }
+	header
+	{
+
+		width: 100%;
+	}
+td
+{
+
+
+margin-top:"90px";
+
+}
+input[type="checkbox"]
+{
+    background: #990000;    
+}
+</style>
+<body style="background-color:#eee" >	
+<div class="container col-xl ">
+	<div class="row">
+		<div class=" col-xl" style="background-color: white">
+	<nav style="height:111.5px;" class="navbar navbar-white bg-white col-xs ">
+  <a  style="margin:auto; padding-right:250px"   class="navbar-brand" href="index.html" >
+
+ <img  src="hepsi.png" width="173" height="31"  alt="">
+
+  </a>
+</nav>
+</div>
+</div>
+</div>
+<div style="height:540px; margin: auto;  "  class="container col-xs" >
+	<div class="row" >
+
+	<div class="col-sm-5" style=" margin: auto; 	" >
+<!-- aşağıda -->
+<div style=" margin: auto;  margin-top: 40px;   height:461px " class="card mb-4 shadow-sm col- ">
+      
+      <div class="card-body">
+      
+      <h3 style=" margin-top:4px; margin-bottom: 30px; margin-left: 12px; color: #ff6000" > Üye Girişi</h5>
+
+<form  class="formlog">
+<table width="100%"  >
+
+<tr><td> <input style="color:#ff6000; " type="radio" name=""> Giriş Yap </td></tr>
+<tr><td> <input type="radio" name="">  Üye ol </td></tr>
+<hr>
+<tr><td><input style=" margin-top: 60px;  width:100%; height:42px; border-radius: 3px; border: 2px solid lightgray" type="text" name="username" placeholder="Kullanıcı Adı" class="username" > </td>
+</tr>
+<tr> <td class="mesaj" style="padding-left: 12px; font-size: 10px; color: red;"></td> </tr>
+<tr><td><input type="text" name="pass" placeholder="Şifre" style=" margin-top: 21px; width:100%; height:42px; border-radius: 3px; border: 2px solid lightgray" class="pass"></td></tr>
+<tr> <td style="margin: auto; color: red; font-size: 10px;" class="mesaja"></td> </tr>
+
+<tr><td><button style="margin-top: 21px; background-color:#ff6000; color: white; border-radius:8px; height:42px; width: 100%; " type="button"><h6 style="margin-top: 7px;"> Giriş</h1></button></td></tr>
+	<tr><td style="padding-left: 12px; color: green" class="succes"> </td></tr>
+
+</table>
+</form>
+
+</div>
+</div>
+    </div>
+</div>
+    </div>
+
+
+
+<!-- footer -->
+<footer class="page-footer font-small cyan " style="background-color: white;  margin-top: 6px;">
+  <div class="container">
+ <div class="row">
+ <div class="container" style="height: 120px" >     
+  <ul  style=" position: absolute; float: left;">
+  <li class="nav-item active" style="float: left;">
+  <a class="nav-link" href="#" style=" float: left; margin: auto; color: black; text-decoration: none; font-size: 12px;" title="Siparişlerim fırsatları">Siparişlerim </a></li>
+   <li class="nav-item active" style="float: left;">
+  <li class="nav-item active" style="float: left;font-size: 20px padding-right: 10px;"> |</li>
+  <a class="nav-link" href="#" style=" float: left; color: black; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Günün fırsatları </a></li>
+      <li class="nav-item active "  style="float: left;font-size: 20px padding-right: 25px;"> |</li>
+   <li class="nav-item active" style="float: left;">
+  <a class="nav-link" href="#" style=" float: left; color: black; text-decoration: none; font-size: 12px;" title="Yurt Dışı Satış">Yurt Dışı Satış </a></li>
+   </ul>
+    </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+
+
+
+<script>
+$(function(){
+  $("button").click(function(){
+  
+  var username;
+  var pass ;
+username= $(".formlog .username").val();
+pass= $(".formlog .pass").val();
+
+if(username =="")
+{
+ $(".mesaj").html("Kullanıcı Adı alanı boş bırakılamaz");
+$(".username").css("border","2px solid red");
+
+} 
+	else if(pass =="")
+{
+$(".mesaja").html("Şifre alanı boş bırakılamaz");
+$(".pass").css("border","2px solid red");
+
+}
+else
+{
+
+$(".username , .pass").css("border","2px solid lightgreen");
+$(".mesaj , .mesaja").remove();
+$(".succes").html("Giriş Başarılı");
+$(location).prop('href', 'index.html',4000);
+}
+
+
+});
+});
+
+</script>
+</html>
+		

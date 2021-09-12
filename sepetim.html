@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:white;  ">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/jquery-3.4.1.min.js"> </script>
+<link rel="import" href="urun.html">
+
+<script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="js/sweetalert2.all.min.css">
+    <title>HepsiBurağa</title>
+    
+   <link rel="icon" href="hepsi.ico" type="image/x-icon" />
+</head>
+<body  style="margin: auto; background-color:#e5e5e5;">
+<style type="text/css">
+
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: lightgray;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#az
+{
+
+  border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+
+#art
+{
+  border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+
+
+  .artaz
+  {
+height: 48px; 
+
+cursor: pointer;
+    line-height: 1;
+-webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+ 
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+
+    display: inline-block;
+        outline: 0
+white-space: nowrap;
+background-color: #bfbfbf;
+    box-sizing: inherit;
+    color: #484848;
+    width: 10px;
+    padding: 8px 0;
+        font-family: AvenirNextLTPro,Helvetica,sans-serif;
+    text-align: center;
+    border: 0;
+        transition-duration: .1s;
+        font-size: 13px;
+
+  }
+#sayi , #sayii
+{
+    width: 22px;
+    padding: 5px 5px 15px;
+    border-color: #bfbfbf;
+    font-weight: 700;
+    text-align: center;
+    color: #484848;
+    border: 2px solid #bfbfbf;
+
+  }
+
+  li{
+
+
+text-decoration: none;
+list-style: none;
+margin-top: 2px;
+font-size: 12px;
+
+
+}
+</style>
+
+	    <nav id="darc" class="navbar navbar-expand-lg navbar-light d-none d-xl-block " style="background-color:white; margin: auto; ">
+	      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav"  style="margin: auto; ">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" style=" margin: auto; color: black; text-decoration: none; font-size: 12px;" title="Siparişlerim fırsatları">Siparişlerim </a></li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Günün fırsatları </a></li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Yurt Dışı Satış">Yurt Dışı Satış </a></li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Bugün Teslimat">Bugün Teslimat </a></li>
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Kampanyalar">Kampanyalar</a></li>
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="#" style="padding-right: 25px; color: red; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Girişimci Kadınlar </a></li>
+                                  <li class="nav-item active">
+                                      <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Yardım">Yardım</a></li>
+                                      <li class="nav-item active">
+                                          <a class="nav-link" href="#" style="padding-right: 25px; color: black; text-decoration: none; font-size: 12px;" title="Bize Sorun">Bize Sorun</a></li>
+
+
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+  <nav id="dard" class="navbar navbar-expand-lg navbar-light d-none d-xl-block " style="background-color:white; height: 70px">
+        
+      
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav "  style="margin: auto;">
+            <li class="nav-item active " style="    ; padding-right: 100px " >
+              <a href="index.html" style=" z-index:9122" >
+                      <img src="hepsi.png"   class="img-fluid d-none d-xl-block" alt="Responsive image"  height="40px" width="190px"></a>
+                        </li>
+              <li class="nav-item active ">
+                  
+
+            <input type="text" id="loginput" style="height:48px; width: 582px ;  border-radius: 4px; border: 2px solid gray"  placeholder="Ürün, kategori veya marka ara"  > 
+
+                             </li>
+                  <li class="nav-item active">
+                      <button id="loginbtn" class="btn btn-secondary "   style=" height: 48px;  margin-right: 50px " type="button">ARA</button>
+
+                    </li>
+                      <li class="nav-item active" style="padding-right: 20px">
+                        
+
+
+<div class="form-group" style="">
+                  <div class="d-flex">
+                        <div class="dropdown" style="z-index:9122" >
+                          <button id="giris"  style=" height: 55px; border: 1px solid black ;" type="button" class="btn btn-light dropdown-toggle  d-none d-xl-block" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                           <img src="adam.jpg" style=" " height="20px" width="19px" alt=""> Giriş Yap
+                           <h style="font-size: 11px">veya üye ol</h>
+                          </button>   
+                          <div style="z-index:9122"  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="login.html">Giriş Yap</a>
+                            <a class="dropdown-item" href="#">Üye ol</a>
+                            <hr>
+                            <a class="dropdown-item" href="#">Siparişlerim</a>
+                            <a class="dropdown-item" href="#">Hesabım</a>
+                            <a class="dropdown-item" href="#">Favori Listem</a>
+                            <hr>
+                            <a class="dropdown-item" href="#">Hediye Çeklerim</a>
+                            <hr>
+                            <a class="dropdown-item" href="#">Mesajlarım</a>
+                         </div>
+                        </div>
+                    </div>  </div> </li>
+
+                          <li class="nav-item active">
+                             
+    <button id="ooo" style=" height: 55px" class="btn btn-secondary  d-none d-xl-block" > <img src="sepet.jpg" height="20px" width="" alt="">  Sepetim
+      <li style="position:relative; font-size:11px; float:right; display: none;  width: auto;"class="ürünsayi" value="" type="" name="">Sepetinize <div id="yeter" ></div> Adet ürün eklenmiştir </li> </button>
+  </li>  <li><label style="" class="switch">
+  <input id="darkmode" value="2" type="checkbox">
+  <span class="slider"></span>
+
+</label> <p><b id="dfont">Dark Mode</b></p> </li>  
+
+
+          </ul>
+
+        </div>
+
+      </nav>
+      
+
+
+
+
+			   </div>
+          </div>
+           </div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-truncate" style="background-color:#ff6000; ">
+      
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul  id="güm" class="navbar-nav" style="margin: auto;">
+                 
+                  
+                  <div class="d-flex">
+                      <div class="dropdown">
+                        <button id="frop"  style="z-index:9122;border:none;   font-size: 14px; color: white ;" type="button" class="btn dropdown-toggle " id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                       Elektronik
+                        </button> 
+                        <div id="yav"  style="z-index:9122;border: none;  margin-top: -2px; background-color:white; display: none;  " class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+
+
+
+                              <div  class="btn-group dropright">
+                                <li>
+                                  <button id="gluk" type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Bilgisayar/Tablet
+                                  </button>
+                                  </li>
+                                  <div id="vav"  class="dropdown-menu" style="z-index:9122;margin-top: -8px; margin-left:-3px;  border:none; ">
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Dizüstü Bilgisayar 
+                                          <p style="color:black; font-size: 13px;">Notebook falan</p></a> 
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Tablet 
+                                          <p style="color:black; font-size: 13px;">güzel</p>  </a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Falan</a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Filan</a>
+                                  </div>
+                                </div>
+                                
+<br>
+                                <div  class="btn-group dropright">
+                                  <button id="gluk" type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    YAZICILAR/PROJEKSİYON
+                                  </button>
+                                  <div id="hav" class="dropdown-menu" style="margin-top: -8px; margin-left:-3px;  border:none; ">
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Dizüstü Bilgisayar 
+                                          <p style="color:black; font-size: 13px;">Notebook falan</p></a> 
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Tablet 
+                                          <p style="color:black; font-size: 13px;">güzel</p>  </a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Falan</a>
+                                      <a  class="dropdown-item"   style="margin-top: -1px; color:#ff6000;  "href="#">Filan</a>
+                                  </div>
+                                </div>
+                  
+
+
+
+
+
+                          <hr>
+                          <a class="dropdown-item" href="#">Siparişlerim</a>
+                          <a  class="dropdown-item" href="#">Hesabım</a>
+                          <a class="dropdown-item" href="#">Favori Listem</a>
+                          <hr>
+                          <a class="dropdown-item" href="#">Hediye Çeklerim</a>
+                          <hr>
+                          <a class="dropdown-item" href="#">Mesajlarım</a>
+                        </div>
+                      </div>
+                      </div>
+
+
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">HEPSİMODA <span class="sr-only">(current)</span></a>
+                </li>
+              
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" style="margin-left: 25px; font-size: 12px; "><span >EV, YAŞAM, KIRTASİYE, OFİS</span>,<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">OTO,BAHÇE <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">ANNE BEBEK <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">SPOR OUTDOOR <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item active">
+                        <ul></ul>
+                          <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">KOZMETİK <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">SÜPERMARKET <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#" style="margin-left: 25px;font-size: 12px;">KİTAP, MÜZİK <span class="sr-only">(current)</span></a>
+                            </li>
+              </ul>
+            </div>
+          </nav>
+  </div>
+<!-- middle -->
+<div class="container" style="">
+  <div class="row">
+    <div class="col-9">
+
+  <div class="col" style="border: 1px solid lightgray; background-color: white;">
+    <div class="container">
+<h3 style="color:#ff6000; margin-top: 10px">Sepetim</h3>
+
+<div class="row">
+<div class="col-6"></div>
+<div class="col-4" style="color: gray; font-size: 13px; margin-left:8px;  ">Adet</div>
+<div class="col-1" style="color: gray; font-size: 13px; "> Fiyat</div>
+ </div>
+
+
+<hr>
+<div class="row" id="sil">
+
+<div class="col-6"><img src="sepetr.jpg"> <b style="font-size: 12px">Dell Alienware AW958 Elite RGB Oyuncu Mouse</b>  </div>
+
+<div style="" class="col-4"> <button id="az" style="float: left;" class="artaz">-</button><input style="float: left;" id="sayi" class="input short" type="text" value="1" maxlength="3" data-bind="markupValue: 'quantity', event: {keypress: banText}"> <button id="art" class="artaz" style="float: left;">+</button>
+</div>
+
+<div class="col-2"><b id="mouseff" style="font-size: 15px;">259</b><b id="mousedeger" style="display: none;">259</b> <b style="">.01 TL</b></div>
+
+</div>
+
+<div id="anadon" class="row" style="display: none;"> <div class="col-12" style=""  > <a href="index.html"><button class="btn btn-secondary" style="margin-left: 300px;margin-bottom: 10px;" >Ana Sayfaya Dön</button></a>  </div> </div>
+
+<div class="row"id="sill">
+<div class="ürün2">
+
+  </div>
+<div class="col-6" ><img src="sepetu.jpg"> <b style="font-size: 12px">Huawei MediaPad T3 16GB</b>  </div>
+
+<div style="" class="col-4"> <button id="azz" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;float: left;" class="artaz">-</button><input style="float: left;" id="sayii" class="input short" type="text" value="1" maxlength="3" data-bind="markupValue: 'quantity', event: {keypress: banText}"> <button id="artt" class="artaz" style="  border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+ float: left;">+</button>
+</div>
+
+<div class="col-2"><b id="mousefff" style="font-size: 15px;">798</b><b id="mousedegerr" style="display: none;">798</b> <b style="">.01 TL</b></div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div id="sagcon" class=" col-3" style="background-color: white; ">
+ <b style="color:#ff6000; right: 0; "> Sipariş özeti</b><br> <b style="font-size: 19px;" id="ozet">2</b>ürün
+  <p>ödenecek tutar</p>
+<b id="topla" style="font-size: 24px">1059</b>TL
+  <br>
+
+  <button id="tamam" class="btn btn-secondary  " style=" background-color: #ff6000; color: white;
+border-radius: 7px; width: auto;  height: 53px;">Alışverişi Tamamla
+</button>
+<br>
+  <button class="btn btn-warning " id="sepetsil" style="margin-top: 30px; background-color: red;  color: white;
+border-radius: 7px; width: auto;  height: 50px;">Sepeti Sil
+</button>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+<!-- footer -->
+
+<footer id="foot" class="page-footer font-small cyan " style="background-color: white;  margin-top: 6px;">
+  <div class="container">
+ <div class="row">
+ <div class="container" style="height: 120px" >     
+  <ul  style=" position: absolute; float: left;">
+  <li class="nav-item active" style="float: left;">
+  <a class="nav-link" href="#" style=" float: left; margin: auto; color: black; text-decoration: none; font-size: 12px;" title="Siparişlerim fırsatları">Siparişlerim </a></li>
+   <li class="nav-item active" style="float: left;">
+  <li class="nav-item active" style="float: left;font-size: 20px padding-right: 10px;"> |</li>
+  <a class="nav-link" href="#" style=" float: left; color: black; text-decoration: none; font-size: 12px;" title="Günün fırsatları">Günün fırsatları </a></li>
+      <li class="nav-item active "  style="float: left;font-size: 20px padding-right: 25px;"> |</li>
+   <li class="nav-item active" style="float: left;">
+  <a class="nav-link" href="#" style=" float: left; color: black; text-decoration: none; font-size: 12px;" title="Yurt Dışı Satış">Yurt Dışı Satış </a></li>
+   </ul>
+    </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+
+// $(function(){
+
+// $("html").mouseover(function(){
+
+// var a=$(".degis");
+
+// a.animate({height:200},1000);
+// a.animate({width:1110},1000);
+// $(".hg").animate({fontSize:100},1000);
+// a.css("background-color","#ff6000");
+// });
+
+// $(".stop").click(function(){
+// $(".degis").finish();
+// });
+
+// });
+
+
+
+$(function(){
+$("#loginput ,#loginbtn").mouseenter(function(){
+$("#loginput").css("border","2px solid #ff6000");
+$("#loginbtn").css("background-color","#ff6000");
+});
+
+$("#loginput,#loginbtn").mouseleave(function(){
+$("#loginput").css("border","2px solid gray");
+$("#loginbtn").css("background-color","gray");
+});
+});
+
+$(function(){
+  sayi=parseInt($("#sayi").val());
+$("#art").click(function(){
+if (sayi < 3) {
+                sayi++;
+                $("#sayi").attr("value", sayi);
+                  $("#ozet").html(sayii+sayi);
+      var sayi1= Number($("#mouseff").html());
+      var sayi2= Number($("#sayi").val());
+    var deger= Number($("#mousedeger").html());
+      $("#mouseff").html(deger*sayi2);
+  
+   
+var topla= Number($("#topla").html());
+var toplam = topla+259;
+
+
+$("#topla").html(toplam);
+
+
+
+}
+else if  (sayi==3)
+{let timerInterval
+Swal.fire({
+  title: 'Stok Miktarı Aşıldı Lütfen Daha Sonra Tekrar Deneyin!',
+  html: 'Bu Pencere <strong></strong> Milisaniye içinde Kapanacaktır.',
+  timer: 4000,
+  onBeforeOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      Swal.getContent().querySelector('strong')
+        .textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  onClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.timer
+  ) {
+    console.log('I was closed by the timer')
+  }
+})
+};
+});
+$("#az").click(function(){
+if (sayi > 1) {
+
+                sayi--;
+                $("#sayi").attr("value", sayi);
+  $("#ozet").html(sayi+sayii);
+                      var sayi1= Number($("#mouseff").html());
+      var sayi2= Number($("#sayii").val());
+       var deger= Number($("#mousedeger").html());
+      $("#mouseff").html(sayi1-deger);
+  
+
+   
+var topla= Number($("#topla").html());
+var toplam = topla-259;
+
+
+$("#topla").html(toplam);
+
+}
+else if (sayi==1) {
+alert("En Az Bir Ürün Seçmelisin")
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+  sayii=parseInt($("#sayii").val());
+$("#artt").click(function(){
+if (sayii < 5) {
+                sayii++;
+                $("#sayii").attr("value", sayii);
+      var sayii1= Number($("#mousefff").html());
+      var sayii2= Number($("#sayii").val());
+    var degerr= Number($("#mousedegerr").html());
+      $("#mousefff").html(degerr*sayii2);
+  
+  $("#ozet").html(sayii+sayi);
+
+
+   
+var topla= Number($("#topla").html());
+var toplam = topla+798;
+
+
+$("#topla").html(toplam);
+
+
+
+
+}
+else if  (sayii==5)
+{let timerInterval
+Swal.fire({
+  title: 'Stok Miktarı Aşıldı Lütfen Daha Sonra Tekrar Deneyin!',
+  html: 'Bu Pencere <strong></strong> Milisaniye içinde Kapanacaktır.',
+  timer: 4000,
+  onBeforeOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      Swal.getContent().querySelector('strong')
+        .textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  onClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.timer
+  ) {
+    console.log('I was closed by the timer')
+  }
+})
+};
+});
+$("#azz").click(function(){
+
+
+
+  
+if (sayii > 1)
+
+ {
+                sayii--;
+                $("#sayii").attr("value", sayii);
+  
+  $("#ozet").html(sayii+sayi);
+                      var sayii1= Number($("#mousefff").html());
+      var sayii2= Number($("#sayii").val());
+       var degerr= Number($("#mousedegerr").html());
+      $("#mousefff").html(sayii1-degerr);
+
+   
+var topla= Number($("#topla").html());
+var toplam = topla-798;
+
+
+$("#topla").html(toplam);
+
+
+
+
+}
+
+
+
+else if (sayii==1) {
+alert("En Az Bir Ürün Seçmelisin")
+}
+});
+
+
+
+
+$("#sepetsil").click(function(){
+
+
+Swal.fire({
+  title: 'Sepeti Silmek İstediğinden Emin Misin ?',
+  text: "Bu İşlemi Geri Alamazsın!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+      'Silindi!',
+      'Sepet Silindi, Ana Sayfaya Yönlendiriliyorsunuz',
+      'success'
+    )
+  }
+})
+
+ setTimeout(function(){
+
+$('#sill').remove();
+$('#sil').remove();
+$('#sepetsil').remove();
+$('#sagcon').remove();
+ setTimeout(function(){
+ $(location).prop('href','odeme.html',);     
+
+},1500);
+},3000);
+
+// setTimeout(function(){
+
+
+
+//   $(location).prop('href','index.html',);     
+
+
+// },3000);
+
+
+
+
+});
+
+
+$("#tamam").click(function(){
+
+setTimeout(function(){
+
+  $(location).prop('href','odeme.html',);     
+},700);
+
+
+});
+
+});
+
+
+
+// darkmod baslangıc
+$(function(){
+var value = Number($("#darkmode").val());
+value=2;
+
+   var ckbox = $('#darkmode');
+
+    $('input').on('click',function () {
+
+
+ if (ckbox.is(':checked')) {
+$("#foot").css("background-color","gray").css("transition-duration","2s");
+$("body").css("background-color","black").css("transition-duration","2s");
+$("#dart").css("background-color","black").css("transition-duration","2s");
+$("#darz").css("background-color","black").css("transition-duration","2s");
+$("#dard").css("background-color","black").css("transition-duration","2s");
+$("#darc").css("background-color","black").css("transition-duration","2s");
+$("a").css("color","white").css("transition-duration","2s");
+$("html").css("background-color","black").css("transition-duration","2s");
+$("#nav").css("background-color","black").css("transition-duration","2s");
+$("#navv").css("background-color","black").css("transition-duration","2s");
+$("#dfont").css("color","white").css("transition-duration","2s");
+$("a.dropdown-item").css("color","black");
+value =-1;
+}
+else {
+value =2;
+  $("#foot").css("background-color","white");
+$("body").css("background-color","#e5e5e5");
+$("#dart").css("background-color","white");
+$("#darz").css("background-color","white");
+$("#dard").css("background-color","white");
+$("#darc").css("background-color","white");
+$("a").css("color","black");
+$("html").css("background-color","white");
+$("#nav").css("background-color","white");
+$("#navv").css("background-color","white");
+$("#dfont").css("color","black");
+$("ul#güm a").css("color","white");
+$("#darke a").css("color","black");
+$("a.dropdown-item ").css("color","black");
+
+$("#gkadın ").css("color","red");
+}
+
+
+
+});
+
+});
+// darkmod bitiş
+
+
+
+
+</script>
+
+</body>
+
+
+</html>  
